@@ -1,0 +1,1193 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoga & Suci — Undangan Pernikahan</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold: #d8b16d;
+  --gold-light: #f6dfac;
+  --dark: #15110d;
+  --cream: #f6eedf;
+  --brown: #79552e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  background: var(--cream);
+  color: var(--dark);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(19, 15, 11, .84);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(216,177,109,.25);
+}
+
+.brand {
+  font-family: 'Cinzel', serif;
+  font-size: 17px;
+  color: var(--gold-light);
+  letter-spacing: 1px;
+}
+
+.brand span {
+  color: var(--gold);
+  margin-right: 8px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  color: #f7e8ca;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.menu-btn {
+  display: none;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(13,10,8,.35), rgba(13,10,8,.1) 42%, #17110b 100%),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/The_Prambanan_Temple.jpg") center 48% / cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10,8,5,.62), transparent 35%, transparent 65%, rgba(10,8,5,.62));
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(216,177,109,.45);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 110px 24px 75px;
+  animation: appear 1.5s ease both;
+}
+
+.eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: var(--gold-light);
+  line-height: 2;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 22px auto;
+  color: var(--gold);
+}
+
+.ornament::before,
+.ornament::after {
+  content: "";
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.ornament::after {
+  transform: rotate(180deg);
+}
+
+.ornament span {
+  font-size: 22px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(68px, 11vw, 125px);
+  font-weight: 400;
+  line-height: .95;
+  letter-spacing: -3px;
+  color: var(--gold-light);
+  text-shadow: 0 5px 35px rgba(0,0,0,.6);
+}
+
+.hero h1 small {
+  display: block;
+  font-size: .47em;
+  margin: 12px 0;
+  font-style: italic;
+  color: #fff0ce;
+}
+
+.hero-description {
+  margin-top: 30px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 3px;
+  line-height: 2.2;
+  font-size: 12px;
+}
+
+.date-pill {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 13px 25px;
+  border: 1px solid var(--gold);
+  background: rgba(24,18,11,.55);
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.hero-corner {
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  opacity: .8;
+}
+
+.hero-corner.left { left: 6%; }
+.hero-corner.right { right: 6%; }
+
+/* GENERAL SECTIONS */
+
+section {
+  position: relative;
+}
+
+.section {
+  padding: 95px 7%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title .eyebrow {
+  color: var(--brown);
+  font-size: 10px;
+}
+
+.section-title h2 {
+  margin-top: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 400;
+  color: var(--brown);
+}
+
+.section-title p {
+  max-width: 540px;
+  margin: 15px auto 0;
+  font-size: 13px;
+  line-height: 2;
+  color: #786c5a;
+}
+
+.gold-divider {
+  width: 100px;
+  height: 1px;
+  background: var(--gold);
+  margin: 28px auto;
+  position: relative;
+}
+
+.gold-divider::after {
+  content: "✦";
+  position: absolute;
+  top: -12px;
+  left: 43px;
+  color: var(--brown);
+  background: var(--cream);
+  padding: 0 5px;
+}
+
+/* OPENING */
+
+.opening {
+  background:
+    radial-gradient(ellipse at top, #fffaf0, transparent 70%),
+    var(--cream);
+  text-align: center;
+}
+
+.arabic {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--brown);
+  margin-bottom: 24px;
+}
+
+.opening-text {
+  max-width: 700px;
+  margin: auto;
+  color: #665b4a;
+  font-size: 13px;
+  line-height: 2.3;
+}
+
+/* COUPLE */
+
+.couple {
+  background: #1a140e;
+  color: var(--cream);
+  overflow: hidden;
+}
+
+.couple::before,
+.couple::after {
+  content: "❖  ❋  ❖";
+  position: absolute;
+  color: rgba(216,177,109,.12);
+  font-size: 70px;
+  pointer-events: none;
+}
+
+.couple::before {
+  top: 20px;
+  left: -20px;
+}
+
+.couple::after {
+  right: -20px;
+  bottom: 20px;
+}
+
+.couple .section-title .eyebrow {
+  color: var(--gold);
+}
+
+.couple .section-title h2 {
+  color: var(--gold-light);
+}
+
+.couple-grid {
+  max-width: 850px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  gap: 25px;
+  align-items: center;
+  text-align: center;
+}
+
+.person {
+  padding: 30px 10px;
+}
+
+.person .initial {
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 25px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 43px;
+  font-style: italic;
+  color: var(--gold-light);
+  box-shadow: 0 0 0 7px rgba(216,177,109,.05);
+}
+
+.person h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 400;
+  color: var(--gold-light);
+}
+
+.person p {
+  font-size: 12px;
+  color: #c8b99f;
+  line-height: 2;
+  margin-top: 14px;
+}
+
+.ampersand {
+  font-family: 'Playfair Display', serif;
+  font-size: 65px;
+  font-style: italic;
+  color: var(--gold);
+}
+
+.batik {
+  text-align: center;
+  color: var(--gold);
+  font-size: 24px;
+  margin: 30px 0 0;
+  opacity: .75;
+}
+
+/* COUNTDOWN */
+
+.countdown-section {
+  background:
+    linear-gradient(rgba(20,15,10,.87), rgba(20,15,10,.92)),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/The_Prambanan_Temple.jpg") center / cover;
+  color: white;
+  text-align: center;
+  padding: 80px 6%;
+}
+
+.countdown-section .eyebrow {
+  color: var(--gold);
+}
+
+.countdown-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 39px;
+  font-weight: 400;
+  color: var(--gold-light);
+  margin: 10px 0 35px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  width: 105px;
+  padding: 20px 8px;
+  border: 1px solid rgba(216,177,109,.7);
+  background: rgba(216,177,109,.05);
+}
+
+.time-box strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--gold-light);
+}
+
+.time-box span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #d7c7aa;
+  text-transform: uppercase;
+}
+
+/* EVENTS */
+
+.events {
+  background: var(--cream);
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.event-card {
+  padding: 40px 28px;
+  text-align: center;
+  background: #fff9ef;
+  border: 1px solid #e5d1ad;
+  box-shadow: 0 12px 35px rgba(75,47,18,.06);
+  transition: transform .3s, box-shadow .3s;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(75,47,18,.12);
+}
+
+.event-icon {
+  font-size: 32px;
+  color: var(--brown);
+  margin-bottom: 15px;
+}
+
+.event-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--brown);
+}
+
+.event-card .event-date {
+  color: #987342;
+  font-size: 12px;
+  margin-top: 18px;
+}
+
+.event-card p {
+  font-size: 12px;
+  line-height: 2;
+  margin-top: 10px;
+  color: #6d6253;
+}
+
+.event-note {
+  text-align: center;
+  margin-top: 35px;
+  font-size: 12px;
+  line-height: 2;
+  color: #756957;
+}
+
+/* LOCATION */
+
+.location {
+  background: #211910;
+  color: var(--cream);
+  text-align: center;
+}
+
+.location .section-title h2 {
+  color: var(--gold-light);
+}
+
+.location .section-title .eyebrow {
+  color: var(--gold);
+}
+
+.location .section-title p {
+  color: #d0c0a5;
+}
+
+.location-card {
+  max-width: 650px;
+  margin: auto;
+  border: 1px solid rgba(216,177,109,.5);
+  padding: 40px 25px;
+  background: rgba(255,255,255,.025);
+}
+
+.location-pin {
+  font-size: 33px;
+  margin-bottom: 15px;
+}
+
+.location-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  font-weight: 400;
+  color: var(--gold-light);
+}
+
+.location-card p {
+  font-size: 13px;
+  color: #d6c6aa;
+  line-height: 2;
+  margin-top: 15px;
+}
+
+.map-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 13px 25px;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.map-button:hover {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+/* RSVP */
+
+.rsvp {
+  background:
+    radial-gradient(ellipse at bottom, #fff9ee, transparent 70%),
+    var(--cream);
+}
+
+.rsvp-card {
+  max-width: 650px;
+  margin: auto;
+  padding: 38px;
+  border: 1px solid #e0c69a;
+  background: rgba(255,255,255,.45);
+}
+
+.rsvp-card label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: var(--brown);
+}
+
+.rsvp-card input,
+.rsvp-card select,
+.rsvp-card textarea {
+  display: block;
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #dfcfb6;
+  background: #fffdf8;
+  color: #30251a;
+  outline: none;
+  margin-bottom: 20px;
+  border-radius: 0;
+}
+
+.rsvp-card input:focus,
+.rsvp-card select:focus,
+.rsvp-card textarea:focus {
+  border-color: var(--brown);
+}
+
+.rsvp-card textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--brown);
+  background: var(--brown);
+  color: white;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: .3s;
+}
+
+.submit-button:hover {
+  background: #4c321c;
+}
+
+.form-message {
+  display: none;
+  margin-top: 18px;
+  padding: 15px;
+  background: #efe4cf;
+  color: #533a20;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 65px 20px 35px;
+  background: #100d0a;
+  color: var(--gold-light);
+  text-align: center;
+  border-top: 1px solid rgba(216,177,109,.3);
+}
+
+.footer h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 37px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.footer p {
+  max-width: 500px;
+  margin: 20px auto;
+  color: #c3b398;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.footer small {
+  display: block;
+  margin-top: 35px;
+  color: #81725d;
+  font-size: 10px;
+}
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .navbar {
+    padding: 15px 6%;
+  }
+
+  .brand {
+    font-size: 14px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: rgba(19,15,11,.97);
+    flex-direction: column;
+    gap: 24px;
+    border-top: 1px solid rgba(216,177,109,.2);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 90svh;
+    background-position: center;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-content {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .hero-corner {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .section {
+    padding: 75px 6%;
+  }
+
+  .couple-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .ampersand {
+    font-size: 43px;
+    line-height: 1;
+  }
+
+  .person {
+    padding: 20px 10px;
+  }
+
+  .person .initial {
+    width: 90px;
+    height: 90px;
+    font-size: 35px;
+  }
+
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .countdown {
+    gap: 10px;
+  }
+
+  .time-box {
+    width: calc(50% - 10px);
+    max-width: 135px;
+  }
+
+  .rsvp-card {
+    padding: 24px 18px;
+  }
+
+  .countdown-section h2 {
+    font-size: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGASI -->
+<header class="navbar">
+  <a class="brand" href="#beranda">
+    <span>❖</span> YOGA & SUCI
+  </a>
+
+  <button class="menu-btn" id="menuBtn"
+          aria-label="Buka menu" aria-expanded="false">
+    ☰
+  </button>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="#beranda">Beranda</a>
+    <a href="#mempelai">Mempelai</a>
+    <a href="#acara">Acara</a>
+    <a href="#lokasi">Lokasi</a>
+    <a href="#rsvp">RSVP</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="beranda">
+  <div class="hero-content">
+    <p class="eyebrow">UNDANGAN PERNIKAHAN</p>
+
+    <div class="ornament"><span>❖</span></div>
+
+    <p style="font-size:13px;line-height:2;color:#f1dfc1">
+      Dengan memohon rahmat dan ridha Tuhan Yang Maha Esa,<br>
+      kami mengundang Bapak/Ibu/Saudara/i
+    </p>
+
+    <h1>
+      Yoga
+      <small>&</small>
+      Suci
+    </h1>
+
+    <div class="ornament"><span>❋</span></div>
+
+    <p class="hero-description">
+      SATU JANJI · SEJUTA CERITA<br>
+      MENUJU HIDUP BERSAMA
+    </p>
+
+    <div class="date-pill">10 · 10 · 2027</div>
+  </div>
+
+  <div class="hero-corner left">꧁ BUDAYA JAWA ꧂</div>
+  <div class="hero-corner right">꧁ ABADI DALAM CINTA ꧂</div>
+</section>
+
+<!-- PEMBUKAAN -->
+<section class="section opening">
+  <div class="section-title reveal">
+    <p class="eyebrow">BISMILLAHIRRAHMANIRRAHIM</p>
+    <h2>Salam Sejahtera</h2>
+    <div class="gold-divider"></div>
+  </div>
+
+  <div class="opening-text reveal">
+    <p class="arabic">“Dua hati, satu tujuan, selamanya.”</p>
+
+    <p>
+      Dengan penuh rasa syukur atas karunia-Nya, kami bermaksud
+      menyelenggarakan pernikahan putra-putri kami. Dengan segala
+      kerendahan hati, kami mengharapkan doa restu serta kehadiran
+      Bapak/Ibu/Saudara/i untuk menjadi bagian dari hari bahagia kami.
+    </p>
+
+    <p style="margin-top:22px;color:#967044;font-family:'Cinzel',serif">
+      Rahayu · Rukun · Langgeng
+    </p>
+  </div>
+</section>
+
+<!-- MEMPELAI -->
+<section class="section couple" id="mempelai">
+  <div class="section-title reveal">
+    <p class="eyebrow">DENGAN PENUH CINTA</p>
+    <h2>Kedua Mempelai</h2>
+    <p>
+      Bukan tentang menemukan seseorang yang sempurna,
+      melainkan tentang tumbuh bersama dalam cinta dan pengertian.
+    </p>
+  </div>
+
+  <div class="couple-grid reveal">
+    <div class="person">
+      <div class="initial">Y</div>
+      <h3>Yoga</h3>
+      <p>
+        Putra dari<br>
+        Bapak [Nama Ayah] & Ibu [Nama Ibu]
+      </p>
+    </div>
+
+    <div class="ampersand">&</div>
+
+    <div class="person">
+      <div class="initial">S</div>
+      <h3>Suci</h3>
+      <p>
+        Putri dari<br>
+        Bapak [Nama Ayah] & Ibu [Nama Ibu]
+      </p>
+    </div>
+  </div>
+
+  <div class="batik">❖ ━━━━━━━ ❋ ━━━━━━━ ❖</div>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="countdown-section">
+  <p class="eyebrow">MENUJU HARI BAHAGIA</p>
+  <h2>Menghitung Hari</h2>
+
+  <div class="countdown" id="countdown">
+    <div class="time-box">
+      <strong id="days">000</strong>
+      <span>Hari</span>
+    </div>
+
+    <div class="time-box">
+      <strong id="hours">00</strong>
+      <span>Jam</span>
+    </div>
+
+    <div class="time-box">
+      <strong id="minutes">00</strong>
+      <span>Menit</span>
+    </div>
+
+    <div class="time-box">
+      <strong id="seconds">00</strong>
+      <span>Detik</span>
+    </div>
+  </div>
+
+  <p id="countdownMessage"
+     style="margin-top:25px;color:#d8c5a3;font-size:12px">
+    Setiap detik membawa kita lebih dekat.
+  </p>
+</section>
+
+<!-- ACARA -->
+<section class="section events" id="acara">
+  <div class="section-title reveal">
+    <p class="eyebrow">CATAT TANGGALNYA</p>
+    <h2>Rangkaian Acara</h2>
+    <p>
+      Merupakan kebahagiaan bagi kami apabila
+      Bapak/Ibu/Saudara/i berkenan hadir.
+    </p>
+  </div>
+
+  <div class="event-grid">
+    <article class="event-card reveal">
+      <div class="event-icon">❖</div>
+      <h3>Akad Nikah</h3>
+      <div class="event-date">MINGGU, 10 OKTOBER 2027</div>
+      <p>
+        Pukul [Jam Akad] WIB<br>
+        Bertempat di kediaman mempelai
+      </p>
+    </article>
+
+    <article class="event-card reveal">
+      <div class="event-icon">❋</div>
+      <h3>Resepsi</h3>
+      <div class="event-date">MINGGU, 10 OKTOBER 2027</div>
+      <p>
+        Pukul [Jam Resepsi] WIB<br>
+        Bertempat di kediaman mempelai
+      </p>
+    </article>
+  </div>
+
+  <p class="event-note">
+    Mohon maaf apabila terdapat kekeliruan penulisan.<br>
+    Terima kasih atas doa dan restu yang diberikan.
+  </p>
+</section>
+
+<!-- LOKASI -->
+<section class="section location" id="lokasi">
+  <div class="section-title reveal">
+    <p class="eyebrow">TEMPAT BERSEJARAH</p>
+    <h2>Lokasi Pernikahan</h2>
+    <p>
+      Kehadiran Anda menjadi hadiah istimewa
+      bagi perjalanan baru kami.
+    </p>
+  </div>
+
+  <div class="location-card reveal">
+    <div class="location-pin">⌖</div>
+    <h3>Karanganyar</h3>
+    <p>
+      Karanganyar, Semin,<br>
+      Kabupaten Gunungkidul,<br>
+      Daerah Istimewa Yogyakarta
+    </p>
+
+    <a class="map-button"
+       href="https://www.google.com/maps/search/?api=1&query=Karanganyar%2C+Semin%2C+Gunungkidul"
+       target="_blank" rel="noopener noreferrer">
+      BUKA GOOGLE MAPS ↗
+    </a>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section class="section rsvp" id="rsvp">
+  <div class="section-title reveal">
+    <p class="eyebrow">KAMI MENANTIKAN KEHADIRANMU</p>
+    <h2>Konfirmasi Kehadiran</h2>
+    <p>
+      Mohon isi formulir berikut untuk memberi tahu
+      kami apakah Anda dapat hadir.
+    </p>
+  </div>
+
+  <form class="rsvp-card reveal" id="rsvpForm">
+    <label for="nama">Nama Lengkap</label>
+    <input id="nama" name="nama" type="text"
+           placeholder="Masukkan nama Anda" required>
+
+    <label for="kehadiran">Konfirmasi Kehadiran</label>
+    <select id="kehadiran" name="kehadiran" required>
+      <option value="">Pilih jawaban</option>
+      <option value="Hadir">Ya, saya akan hadir</option>
+      <option value="Tidak hadir">Maaf, saya belum bisa hadir</option>
+    </select>
+
+    <label for="jumlah">Jumlah Tamu</label>
+    <select id="jumlah" name="jumlah" required>
+      <option value="1">1 orang</option>
+      <option value="2">2 orang</option>
+      <option value="3">3 orang</option>
+      <option value="4">4 orang</option>
+    </select>
+
+    <label for="ucapan">Ucapan dan Doa</label>
+    <textarea id="ucapan" name="ucapan"
+              placeholder="Tuliskan doa terbaik untuk Yoga & Suci..."></textarea>
+
+    <button class="submit-button" type="submit">
+      KIRIM KONFIRMASI
+    </button>
+
+    <div class="form-message" id="formMessage" role="status"></div>
+  </form>
+</section>
+
+<!-- PENUTUP -->
+<footer class="footer">
+  <div class="ornament"><span>❖</span></div>
+
+  <h2>Yoga & Suci</h2>
+
+  <p>
+    “Semoga cinta kami senantiasa tumbuh dalam kesetiaan,
+    rumah tangga kami dipenuhi kedamaian,
+    dan langkah kami selalu diberkahi.”
+  </p>
+
+  <div class="ornament"><span>❋</span></div>
+
+  <p style="font-family:'Cinzel',serif;letter-spacing:2px">
+    MINGGU · 10 · 10 · 2027
+  </p>
+
+  <small>
+    Dengan cinta dan doa · Yoga & Suci
+  </small>
+</footer>
+
+<script>
+// MENU NAVIGASI HP
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', isOpen);
+  menuBtn.textContent = isOpen ? '✕' : '☰';
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.textContent = '☰';
+  });
+});
+
+// COUNTDOWN: 10 OKTOBER 2027
+function updateCountdown() {
+  // Waktu lokal Indonesia Barat (WIB / UTC+7)
+  const weddingDate = new Date('2027-10-10T08:00:00+07:00');
+  const now = new Date();
+  const diff = weddingDate.getTime() - now.getTime();
+
+  const days = document.getElementById('days');
+  const hours = document.getElementById('hours');
+  const minutes = document.getElementById('minutes');
+  const seconds = document.getElementById('seconds');
+  const message = document.getElementById('countdownMessage');
+
+  if (diff <= 0) {
+    days.textContent = '000';
+    hours.textContent = '00';
+    minutes.textContent = '00';
+    seconds.textContent = '00';
+    message.textContent = 'Hari bahagia Yoga & Suci telah tiba!';
+    return;
+  }
+
+  days.textContent = String(Math.floor(diff / 86400000)).padStart(3, '0');
+  hours.textContent = String(Math.floor(diff / 3600000) % 24).padStart(2, '0');
+  minutes.textContent = String(Math.floor(diff / 60000) % 60).padStart(2, '0');
+  seconds.textContent = String(Math.floor(diff / 1000) % 60).padStart(2, '0');
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ANIMASI SAAT SCROLL
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => {
+  observer.observe(el);
+});
+
+// FORM RSVP DEMO
+// Form ini belum mengirim data ke database atau WhatsApp.
+document.getElementById('rsvpForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const nama = document.getElementById('nama').value.trim();
+  const kehadiran = document.getElementById('kehadiran').value;
+  const jumlah = document.getElementById('jumlah').value;
+  const ucapan = document.getElementById('ucapan').value.trim();
+  const message = document.getElementById('formMessage');
+
+  if (!nama || !kehadiran || !jumlah) {
+    message.style.display = 'block';
+    message.textContent = 'Mohon lengkapi data yang wajib diisi.';
+    return;
+  }
+
+  message.style.display = 'block';
+  message.textContent =
+    'Terima kasih, ' + nama + '! ' +
+    'Pilihan kehadiran: ' + kehadiran + '. ' +
+    'Jumlah tamu: ' + jumlah + ' orang. ' +
+    (ucapan ? 'Doa Anda telah tercatat pada tampilan ini.' : '') +
+    ' Untuk saat ini data belum dikirim ke penyelenggara.';
+});
+</script>
+
+</body>
+</html>
+```
